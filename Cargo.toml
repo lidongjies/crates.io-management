@@ -1,0 +1,34 @@
+[package]
+name = "cargo-csm"
+version = "0.1.0"
+edition = "2021"
+authors = ["Jaye Lee <lidongjies@gmail.com>"]
+license = "MIT"
+description = "A Cargo subcommand for management crates.io sources"
+readme = "README.md"
+homepage = "https://github.com/makeco/crates.io-management"
+repository = "https://github.com/makeco/crates.io-management"
+keywords = ["crates.io", "cargo", "crates.io-index"]
+categories = ["command-line-utilities"]
+default-run = "cargo-csm"
+build = "build.rs"
+
+[[bin]]
+name = "cargo-csm"
+path = "src/bin/cargo-csm.rs"
+doctest = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+anyhow = "1.0.58"
+clap = { version = "3.2.12", features = ["derive", "env"] }
+env_logger = { version = "0.9.0"}
+lazy_static = "1.4.0"
+log = "0.4.17"
+serde = "1.0.139"
+serde_derive = { version = "1.0.139" }
+toml = "0.5.9"
+tokio = { version = "1.20.0", features=["macros", "fs", "rt-multi-thread"] }
+
+[build-dependencies]
+vergen = { version = "7.2.1", default-features = false, features = ["build", "git"] }
