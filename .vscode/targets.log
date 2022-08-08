@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Sun Jul 17 15:16:26 2022
+# Make data base, printed on Sat Aug  6 15:52:33 2022
 
 # Variables
 
@@ -18,11 +18,9 @@ make: *** No rule to make target `all'.  Stop.
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
-# environment
- 
-ELECTRON_NO_ATTACH_CONSOLE = 1
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
+ 
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # automatic
@@ -34,7 +32,7 @@ SHELL = /bin/sh
 # environment
 CONSUL_HTTP_ADDR = http://localhost:8500
 # environment
-VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"1d735750dbb1b9066c7513078396ba0f.zh-cn","_translationsConfigFile":"/Users/lidongjie/Library/Application Support/Code/clp/1d735750dbb1b9066c7513078396ba0f.zh-cn/tcf.json","_cacheRoot":"/Users/lidongjie/Library/Application Support/Code/clp/1d735750dbb1b9066c7513078396ba0f.zh-cn","_resolvedLanguagePackCoreLocation":"/Users/lidongjie/Library/Application Support/Code/clp/1d735750dbb1b9066c7513078396ba0f.zh-cn/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a","_corruptedFile":"/Users/lidongjie/Library/Application Support/Code/clp/1d735750dbb1b9066c7513078396ba0f.zh-cn/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"e1243840abbb4e31a890d397033a9abf.zh-cn","_translationsConfigFile":"/Users/lidongjie/Library/Application Support/Code/clp/e1243840abbb4e31a890d397033a9abf.zh-cn/tcf.json","_cacheRoot":"/Users/lidongjie/Library/Application Support/Code/clp/e1243840abbb4e31a890d397033a9abf.zh-cn","_resolvedLanguagePackCoreLocation":"/Users/lidongjie/Library/Application Support/Code/clp/e1243840abbb4e31a890d397033a9abf.zh-cn/da76f93349a72022ca4670c1b84860304616aaa2","_corruptedFile":"/Users/lidongjie/Library/Application Support/Code/clp/e1243840abbb4e31a890d397033a9abf.zh-cn/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 1)
@@ -42,7 +40,7 @@ MAKEFILE_LIST :=  Makefile
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_CWD = /Users/lidongjie/.cargo
+VSCODE_CWD = /
 # environment
 PATH = /Users/lidongjie/.gem/bin:/Users/lidongjie/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/lidongjie/flutter/bin
 # environment
@@ -56,7 +54,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.ArrskMxKpX/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.oP0CVuARCV/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -72,13 +70,11 @@ HOME = /Users/lidongjie
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CLI = 1
-# environment
-VSCODE_CODE_CACHE_PATH = /Users/lidongjie/Library/Application Support/Code/CachedData/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a
+VSCODE_CODE_CACHE_PATH = /Users/lidongjie/Library/Application Support/Code/CachedData/da76f93349a72022ca4670c1b84860304616aaa2
 # environment
 LOGNAME = lidongjie
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 ZSH = /Users/lidongjie/.oh-my-zsh
 # environment
@@ -89,14 +85,12 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
-# environment
-COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
 # environment
-LC_TERMINAL = iTerm2
-# environment
-SHLVL = 3
+SHLVL = 1
 # environment
 HIPPO_PASSWORD = gwg3kmh@dat8BYW-xjk
 # default
@@ -105,18 +99,12 @@ MAKE_VERSION := 3.81
 USER = lidongjie
 # makefile
 .DEFAULT_GOAL := clean
-# default
-MAKECMDGOALS := all
-# environment
-TERM_SESSION_ID = w0t0p0:C0D1A143-FCF7-40B4-B36E-A2298790B55E
 # environment
 LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
-# environment
-TERM_PROGRAM = iTerm.app
 # default
 .VARIABLES := 
 # environment
@@ -124,7 +112,7 @@ TMPDIR = /var/folders/yd/f5_79_zx33l5l9cb3b6pwkdh0000gp/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/lidongjie/Library/Application Support/Code/1.69.1-main.sock
+VSCODE_IPC_HOOK = /Users/lidongjie/Library/Application Support/Code/1.70.0-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -134,23 +122,14 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-TERM_PROGRAM_VERSION = 3.4.16
-# environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.44730612.44730618.CB479769-6C95-4116-A877-55900755E774
-# environment
-LC_TERMINAL_VERSION = 3.4.16
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.45082281.45082287
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
-ITERM_SESSION_ID = w0t0p0:C0D1A143-FCF7-40B4-B36E-A2298790B55E
-# environment
 NOMAD_ADDR = http://localhost:4646
 # environment
-COLORFGBG = 7;0
-# environment
- 
 __CF_USER_TEXT_ENCODING = 0x1F6:0x19:0x34
 # environment
 COMMAND_MODE = unix2003
@@ -158,8 +137,6 @@ COMMAND_MODE = unix2003
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
-# environment
-ITERM_PROFILE = Default
 # environment
 PAGER = less
 # environment
@@ -177,11 +154,10 @@ LANG = C
 # environment
 BINDLE_URL = http://bindle.local.fermyon.link/v1
 # environment
-TERM = xterm-256color
-# environment
-VSCODE_PID = 40596
+VSCODE_PID = 28447
 # variable set hash-table stats:
-# Load=82/1024=8%, Rehash=0, Collisions=4/107=4%
+ 
+# Load=70/1024=7%, Rehash=0, Collisions=1/95=1%
 
 # Pattern-specific Variable Values
 
@@ -284,6 +260,6 @@ lint:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun Jul 17 15:16:26 2022
+# Finished Make data base on Sat Aug  6 15:52:33 2022
 
  

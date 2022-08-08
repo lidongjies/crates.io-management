@@ -1,11 +1,11 @@
 use anyhow::Result;
-use serde_derive::Deserialize;
+use serde_derive::{Deserialize, Serialize};
 use std::{collections::HashMap, path::PathBuf};
 
 #[derive(Debug)]
 pub struct SourceManagement {}
 
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct Source {
     pub registry: Option<String>,
     pub replace_with: Option<String>,
@@ -17,7 +17,7 @@ pub struct Source {
     pub rev: Option<String>,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct Config {
     pub source: HashMap<String, Source>,
 }
@@ -32,11 +32,19 @@ pub struct CargoConfig {
 impl CargoConfig {
     pub async fn load(config_path: PathBuf) -> Result<CargoConfig> {
         let toml = tokio::fs::read_to_string(&config_path).await?;
-        let config = toml::from_str(&toml)?;
+        let config: Config = toml::from_str(&toml)?;
         Ok(Self {
             config,
             config_path: config_path,
             source_management: SourceManagement {},
         })
+    }
+
+    pub async fn update_source(&mut self, source_name: &str) -> Result<()> {
+        let mut source = self.config.source.get_mut("crates-io").unwrap();
+        source.replace_with = Some(source_name.to_string());
+        let contents = toml::to_vec(&self.config).unwrap();
+        tokio::fs::write(&self.config_path, &contents).await?;
+        Ok(())
     }
 }

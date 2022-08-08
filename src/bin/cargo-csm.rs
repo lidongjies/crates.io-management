@@ -1,10 +1,11 @@
 use anyhow::Result;
-use cargo_csm::commands::list::ListCommand;
+use cargo_csm::commands::{list::ListCommand, set::SetCommand};
 use clap::Parser;
 use lazy_static::lazy_static;
 
 #[tokio::main]
 async fn main() -> Result<()> {
+    env_logger::init();
     CSMApp::parse().run().await?;
     Ok(())
 }
@@ -13,18 +14,19 @@ async fn main() -> Result<()> {
 #[clap(name = "cargo-csm", version = version())]
 enum CSMApp {
     List(ListCommand),
+    Use(SetCommand),
     // Current(CurrentCommand),
     // Add(AddCommand),
     // Del(DelCommand),
     // Home(HomeCommand),
     // Test(TestCommand),
-    // Use(UseCommand),
 }
 
 impl CSMApp {
     async fn run(self) -> Result<()> {
         match self {
             Self::List(cmd) => cmd.run().await,
+            Self::Use(cmd) => cmd.run().await,
         }
     }
 }
