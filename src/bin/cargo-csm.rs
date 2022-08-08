@@ -1,5 +1,5 @@
 use anyhow::Result;
-use cargo_csm::commands::{list::ListCommand, set::SetCommand};
+use cargo_csm::commands::{current::CurrentCommand, list::ListCommand, set::SetCommand};
 use clap::Parser;
 use lazy_static::lazy_static;
 
@@ -15,7 +15,7 @@ async fn main() -> Result<()> {
 enum CSMApp {
     List(ListCommand),
     Use(SetCommand),
-    // Current(CurrentCommand),
+    Current(CurrentCommand),
     // Add(AddCommand),
     // Del(DelCommand),
     // Home(HomeCommand),
@@ -27,6 +27,7 @@ impl CSMApp {
         match self {
             Self::List(cmd) => cmd.run().await,
             Self::Use(cmd) => cmd.run().await,
+            Self::Current(cmd) => cmd.run().await,
         }
     }
 }

@@ -40,6 +40,7 @@ impl CargoConfig {
         })
     }
 
+    // TODO: 覆盖式更新肯定不行
     pub async fn update_source(&mut self, source_name: &str) -> Result<()> {
         let mut source = self.config.source.get_mut("crates-io").unwrap();
         source.replace_with = Some(source_name.to_string());
