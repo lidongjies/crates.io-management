@@ -4,18 +4,19 @@ use clap::Parser;
 use std::path::PathBuf;
 
 #[derive(Parser, Debug)]
-pub struct ListCommand {
+pub struct DeleteCommand {
     #[clap(long = "file", short = 'f', default_value = "config", hide = true)]
     pub file_path: PathBuf,
+
+    pub source: String,
 }
 
-impl ListCommand {
+impl DeleteCommand {
     pub async fn run(&self) -> Result<()> {
         let path = PathBuf::from(env!("CARGO_HOME")).join(&self.file_path);
-        let cargo_config = CargoConfig::load(path).await?;
-        let sources = cargo_config.config.source.unwrap().into_keys();
-        let output_sources: Vec<String> = sources.collect();
-        println!("\n {:} \n", output_sources.join("\n"));
+        let mut cargo_config = CargoConfig::load(path).await?;
+        cargo_config.delete_source(&self.source).await?;
+        println!("\n Delete source {:} successfully.\n", &self.source);
         Ok(())
     }
 }

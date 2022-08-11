@@ -21,12 +21,8 @@ impl CurrentCommand {
             .as_ref()
             .unwrap()
             .get("crates-io");
-        if source.is_none() {
-            println!("Current source is crates-io.");
-            return Ok(());
-        }
         println!(
-            "Current source is {:}.",
+            "\n Current source is {:}. \n",
             source.unwrap().replace_with.as_ref().unwrap()
         );
         Ok(())

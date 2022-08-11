@@ -1,6 +1,6 @@
-use crate::cargo_config::Config;
+use crate::cargo_config::{Config, SourceConfig};
 use anyhow::{bail, Result};
-use log::info;
+use log::{debug, info};
 use std::io;
 use std::path::PathBuf;
 
@@ -14,6 +14,8 @@ const DEFAULT_SOURCES_FILE: &str = "sources.toml";
 
 impl CargoConfig {
     pub async fn load(config_path: PathBuf) -> Result<CargoConfig> {
+        debug!("Loading config from {}", config_path.display());
+
         let toml = match tokio::fs::read_to_string(&config_path).await {
             Ok(config) => config,
             Err(e) => handle_read_file_error(e, &config_path).await?,
@@ -34,7 +36,6 @@ impl CargoConfig {
         })
     }
 
-    // TODO: 覆盖式更新肯定不行
     pub async fn update_source(&mut self, source_name: &str) -> Result<()> {
         let mut source = self
             .config
@@ -44,9 +45,33 @@ impl CargoConfig {
             .get_mut("crates-io")
             .unwrap();
         source.replace_with = Some(source_name.to_string());
+        self.save_config().await
+    }
+
+    pub async fn add_source(&mut self, source_name: &str, registry: &str) -> Result<()> {
+        let mut source = SourceConfig::new();
+        source.with_registry(registry.to_owned())?;
+        self.config
+            .source
+            .as_mut()
+            .unwrap()
+            .insert(source_name.to_owned(), source);
+        self.save_config().await
+    }
+
+    pub async fn delete_source(&mut self, source_name: &str) -> Result<()> {
+        self.config.source.as_mut().unwrap().remove(source_name);
+        self.save_config().await
+    }
+
+    pub async fn save_config(&self) -> Result<()> {
         let contents = toml::to_vec(&self.config).unwrap();
         tokio::fs::write(&self.config_path, &contents).await?;
         Ok(())
+    }
+
+    pub async fn test_source(&self, source_name: &str) -> Result<bool> {
+        Ok(true)
     }
 }
 

@@ -1,5 +1,6 @@
 // https://doc.rust-lang.org/cargo/reference/config.html#configuration-format
 
+use anyhow::Result;
 use serde_derive::{Deserialize, Serialize};
 use std::collections::HashMap;
 
@@ -167,6 +168,27 @@ pub struct SourceConfig {
     pub tag: Option<String>,       // tag name for the git repository
     pub rev: Option<String>,       // revision for the git repository
     pub home: Option<String>,      // home page for source
+}
+
+impl SourceConfig {
+    pub fn new() -> Self {
+        Self {
+            replace_with: None,
+            directory: None,
+            registry: None,
+            local_registry: None,
+            git: None,
+            branch: None,
+            tag: None,
+            rev: None,
+            home: None,
+        }
+    }
+
+    pub fn with_registry(&mut self, registry: String) -> Result<()> {
+        self.registry = Some(registry);
+        Ok(())
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug)]
