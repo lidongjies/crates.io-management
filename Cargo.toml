@@ -29,6 +29,8 @@ serde = "1.0.139"
 serde_derive = { version = "1.0.139" }
 toml = "0.5.9"
 tokio = { version = "1.20.0", features=["macros", "fs", "rt-multi-thread"] }
+dialoguer = "0.10.2"
+console = "0.15.1"
 
 [build-dependencies]
 vergen = { version = "7.2.1", default-features = false, features = ["build", "git"] }

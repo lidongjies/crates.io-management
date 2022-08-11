@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Sat Aug  6 15:52:33 2022
+# Make data base, printed on Thu Aug 11 07:20:54 2022
 
 # Variables
 
@@ -19,8 +19,8 @@ make: *** No rule to make target `all'.  Stop.
 # automatic
 ?F = $(notdir $?)
 # automatic
-?D = $(patsubst %/,%,$(dir $?))
  
+?D = $(patsubst %/,%,$(dir $?))
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # automatic
@@ -32,7 +32,7 @@ SHELL = /bin/sh
 # environment
 CONSUL_HTTP_ADDR = http://localhost:8500
 # environment
-VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"e1243840abbb4e31a890d397033a9abf.zh-cn","_translationsConfigFile":"/Users/lidongjie/Library/Application Support/Code/clp/e1243840abbb4e31a890d397033a9abf.zh-cn/tcf.json","_cacheRoot":"/Users/lidongjie/Library/Application Support/Code/clp/e1243840abbb4e31a890d397033a9abf.zh-cn","_resolvedLanguagePackCoreLocation":"/Users/lidongjie/Library/Application Support/Code/clp/e1243840abbb4e31a890d397033a9abf.zh-cn/da76f93349a72022ca4670c1b84860304616aaa2","_corruptedFile":"/Users/lidongjie/Library/Application Support/Code/clp/e1243840abbb4e31a890d397033a9abf.zh-cn/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"08bdb29c43b4c03defdaaecc51ad48b6.zh-cn","_translationsConfigFile":"/Users/lidongjie/Library/Application Support/Code/clp/08bdb29c43b4c03defdaaecc51ad48b6.zh-cn/tcf.json","_cacheRoot":"/Users/lidongjie/Library/Application Support/Code/clp/08bdb29c43b4c03defdaaecc51ad48b6.zh-cn","_resolvedLanguagePackCoreLocation":"/Users/lidongjie/Library/Application Support/Code/clp/08bdb29c43b4c03defdaaecc51ad48b6.zh-cn/6d9b74a70ca9c7733b29f0456fd8195364076dda","_corruptedFile":"/Users/lidongjie/Library/Application Support/Code/clp/08bdb29c43b4c03defdaaecc51ad48b6.zh-cn/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 1)
@@ -70,7 +70,7 @@ HOME = /Users/lidongjie
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/lidongjie/Library/Application Support/Code/CachedData/da76f93349a72022ca4670c1b84860304616aaa2
+VSCODE_CODE_CACHE_PATH = /Users/lidongjie/Library/Application Support/Code/CachedData/6d9b74a70ca9c7733b29f0456fd8195364076dda
 # environment
 LOGNAME = lidongjie
 # environment
@@ -112,7 +112,7 @@ TMPDIR = /var/folders/yd/f5_79_zx33l5l9cb3b6pwkdh0000gp/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/lidongjie/Library/Application Support/Code/1.70.0-main.sock
+VSCODE_IPC_HOOK = /Users/lidongjie/Library/Application Support/Code/1.70.1-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -154,9 +154,8 @@ LANG = C
 # environment
 BINDLE_URL = http://bindle.local.fermyon.link/v1
 # environment
-VSCODE_PID = 28447
+VSCODE_PID = 65416
 # variable set hash-table stats:
- 
 # Load=70/1024=7%, Rehash=0, Collisions=1/95=1%
 
 # Pattern-specific Variable Values
@@ -209,6 +208,7 @@ test:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+ 
 #  commands to execute (from `Makefile', line 13):
 	cargo test
 	
@@ -260,6 +260,6 @@ lint:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sat Aug  6 15:52:33 2022
+# Finished Make data base on Thu Aug 11 07:20:54 2022
 
  

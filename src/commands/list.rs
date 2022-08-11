@@ -1,4 +1,4 @@
-use crate::cargo_config::CargoConfig;
+use crate::managment::CargoConfig;
 use anyhow::{Ok, Result};
 use clap::Parser;
 use log::debug;
@@ -15,7 +15,7 @@ impl ListCommand {
         let path = PathBuf::from(env!("CARGO_HOME")).join(&self.file_path);
         debug!("Loading config from {}", path.display());
         let cargo_config = CargoConfig::load(path).await?;
-        let sources = cargo_config.config.source.keys();
+        let sources = cargo_config.config.source.as_ref().unwrap().keys();
         debug!("Sources: {:?}", sources);
         sources.for_each(|source| println!("{:}", source));
         Ok(())
