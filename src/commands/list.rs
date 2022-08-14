@@ -17,7 +17,7 @@ impl ListCommand {
         let cargo_config = CargoConfig::load(path).await?;
         let sources = cargo_config.config.source.unwrap().into_keys();
         let output_sources: Vec<String> = sources.collect();
-        println!("\n {:} \n", output_sources.join("\n"));
+        println!("\n\t{:}\n", output_sources.join("\n\t"));
         Ok(())
     }
 }

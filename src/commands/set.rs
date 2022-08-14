@@ -31,7 +31,7 @@ impl SetCommand {
             false => bail!("target source {:} not exists", self.source),
             true => cargo_config.update_source(&self.source).await?,
         };
-        println!("Use {:} successful.", self.source);
+        println!("\n\tUse source {:} successfully.\n", self.source);
         Ok(())
     }
 }

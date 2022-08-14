@@ -24,7 +24,7 @@ impl CurrentCommand {
             .unwrap()
             .get("crates-io");
         println!(
-            "\n Current source is {:}. \n",
+            "\n\tCurrent source is {:}.\n",
             source.unwrap().replace_with.as_ref().unwrap()
         );
         Ok(())

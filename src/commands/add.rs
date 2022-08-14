@@ -24,7 +24,7 @@ impl AddCommand {
         cargo_config
             .add_source(&self.source, &self.registry)
             .await?;
-        println!("\n Add source successfully.\n");
+        println!("\n\tAdd source {:} successfully.\n", self.source);
         Ok(())
     }
 }

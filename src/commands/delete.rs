@@ -19,7 +19,7 @@ impl DeleteCommand {
         let path = PathBuf::from(&self.dir_path).join(DEFAULT_CARGO_CONFIG_NAME);
         let mut cargo_config = CargoConfig::load(path).await?;
         cargo_config.delete_source(&self.source).await?;
-        println!("\n Delete source {:} successfully.\n", &self.source);
+        println!("\n\tDelete source {:} successfully.\n", &self.source);
         Ok(())
     }
 }
