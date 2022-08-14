@@ -11,6 +11,7 @@ pub struct CargoConfig {
 }
 
 const DEFAULT_SOURCES_FILE: &str = "sources.toml";
+pub const DEFAULT_CARGO_CONFIG_NAME: &'static str = "config";
 
 impl CargoConfig {
     pub async fn load(config_path: PathBuf) -> Result<CargoConfig> {
@@ -68,10 +69,6 @@ impl CargoConfig {
         let contents = toml::to_vec(&self.config).unwrap();
         tokio::fs::write(&self.config_path, &contents).await?;
         Ok(())
-    }
-
-    pub async fn test_source(&self, source_name: &str) -> Result<bool> {
-        Ok(true)
     }
 }
 

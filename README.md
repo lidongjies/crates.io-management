@@ -5,8 +5,7 @@ Cargo subcommand to management crates.io
 - [x] list subcommand
 - [x] use subcommand
 - [x] current subcommand
-- [] add subcommand
-- [] delete subcommand
-- [] home subcommand
+- [x] add subcommand
+- [x] delete subcommand
 - [] test subcommand
 - [] pretty terminal output

@@ -14,12 +14,17 @@ async fn main() -> Result<()> {
 }
 
 #[derive(Parser)]
-#[clap(name = "cargo-csm", version = version())]
+#[clap(name = "cargo-csm", version = version(), about, author)]
 enum CSMApp {
+    /// List all the sources
     List(ListCommand),
+    /// Change crates-io replace-with to custom source
     Use(SetCommand),
+    /// Show current source name
     Current(CurrentCommand),
+    /// Add one custom source
     Add(AddCommand),
+    /// Delete one custom source
     Del(DeleteCommand),
     // Test(TestCommand),
 }

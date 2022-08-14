@@ -1,4 +1,5 @@
 use crate::managment::CargoConfig;
+use crate::managment::DEFAULT_CARGO_CONFIG_NAME;
 use anyhow::{Ok, Result};
 use clap::Parser;
 use log::debug;
@@ -6,13 +7,14 @@ use std::path::PathBuf;
 
 #[derive(Parser, Debug)]
 pub struct CurrentCommand {
-    #[clap(long = "file", short = 'f', default_value = "config", hide = true)]
-    pub file_path: PathBuf,
+    /// cargo config file dir
+    #[clap(long = "dir", short = 'd', default_value = env!("CARGO_HOME"))]
+    pub dir_path: PathBuf,
 }
 
 impl CurrentCommand {
     pub async fn run(&self) -> Result<()> {
-        let path = PathBuf::from(env!("CARGO_HOME")).join(&self.file_path);
+        let path = PathBuf::from(&self.dir_path).join(DEFAULT_CARGO_CONFIG_NAME);
         debug!("Loading config from {}", path.display());
         let cargo_config = CargoConfig::load(path).await?;
         let source = cargo_config
